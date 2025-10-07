@@ -1,6 +1,6 @@
 #!/bin/bash
 
-config_file="$HOME/.config/hypr/configs/monitor.conf"
+config_file="$HOME/.config/niri/config.kdl"
 auto_generated_setting=$(cat $config_file | grep "monitor=,preferred, auto, 1")
 
 display() {

@@ -1,8 +1,7 @@
 #!/bin/bash
 
-scripts_dir="$HOME/.hyprconf/niri/scripts"
+scripts_dir="$HOME/.config/niri/scripts"
 wallpaper="$HOME/.config/niri/.cache/current_wallpaper.png"
-# monitor_config="$HOME/.hyprconf/niri/configs/monitor.conf"
 
 # Transition config
 FPS=120

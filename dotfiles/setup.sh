@@ -399,16 +399,16 @@ if [[ -d "$HOME/.config/niri/Wallpapers" ]]; then
 
     if [[ -d "$HOME/.config/niri/.cache" ]]; then
         wallName=$(cat "$HOME/.config/niri/.cache/.wallpaper")
-        wallpaper=$(find "$HOME/.niriconf/hypr/Wallpaper" -type f -name "$wallName.*" | head -n 1)
+        wallpaper=$(find "$HOME/.config/niri/Wallpapers" -type f -name "$wallName.*" | head -n 1)
     else
         mkdir -p "$HOME/.config/niri/.cache"
         wallCache="$HOME/.config/niri/.cache/.wallpaper"
 
         touch "$wallCache"      
 
-        if [ -f "$HOME/.config/niri/Wallpaper/linux.jpg" ]; then
+        if [ -f "$HOME/.config/niri/Wallpapers/linux.jpg" ]; then
             echo "linux" > "$wallCache"
-            wallpaper="$HOME/.config/niri/Wallpaper/linux.jpg"
+            wallpaper="$HOME/.config/niri/Wallpapers/linux.jpg"
         fi
     fi
 
