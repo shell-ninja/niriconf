@@ -163,41 +163,35 @@ clear
 # ================================= #
 
 # -------------- AUR helper and other repositories.
-if [[ "$pkgman" == "pacman" ]]; then
+aur=$(command -v yay || command -v paru)
+if [[ -n "$aur" ]]; then
+    msg dn "AUR helper $aur was located... Moving on" 2>&1 | tee -a >(sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$log")
+    sleep 1
+else
+    
+    if hostnamectl | grep -q 'Chassis: vm'; then
+        msg att "Virtual machine was detected, 'Yay' will be installed."
 
-    aur=$(command -v yay || command -v paru)
-    if [[ -n "$aur" ]]; then
-        msg dn "AUR helper $aur was located... Moving on" 2>&1 | tee -a >(sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$log")
-        sleep 1
+        touch "$cache_dir/aur"
+        echo "yay" > "$cache_dir/aur"
     else
-        
-        if hostnamectl | grep -q 'Chassis: vm'; then
-            msg att "Virtual machine was detected, 'Yay' will be installed."
+        touch "$cache_dir/aur"
+        msg ask "Which AUR helper would you like to install?"
+        # msg att "If you are in a virtual machine, please choose ${cyan}'yay'${end}"
+        choice=$(gum choose \
+            --cursor.foreground "#00FFFF" \
+            --item.foreground "#fff" \
+            --selected.foreground "#00FF00" \
+            "paru" "yay"
+        )
 
-            touch "$cache_dir/aur"
+        if [[ "$choice" == "paru" ]]; then
+            echo "paru" > "$cache_dir/aur"
+        elif [[ "$choice" == "yay" ]]; then
             echo "yay" > "$cache_dir/aur"
-        else
-            touch "$cache_dir/aur"
-            msg ask "Which AUR helper would you like to install?"
-            # msg att "If you are in a virtual machine, please choose ${cyan}'yay'${end}"
-            choice=$(gum choose \
-                --cursor.foreground "#00FFFF" \
-                --item.foreground "#fff" \
-                --selected.foreground "#00FF00" \
-                "paru" "yay"
-            )
-
-            if [[ "$choice" == "paru" ]]; then
-                echo "paru" > "$cache_dir/aur"
-            elif [[ "$choice" == "yay" ]]; then
-                echo "yay" > "$cache_dir/aur"
-            fi
         fi
-
-        "$scripts_dir/00-repo.sh" 2>&1 | tee -a >(sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$log")
     fi
 
-else
     "$scripts_dir/00-repo.sh" 2>&1 | tee -a >(sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$log")
 fi
 
