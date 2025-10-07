@@ -1,0 +1,80 @@
+@import "./colors.css";
+
+:root {
+  --border-radius: 10px;
+  --cc-bg: transparent;
+
+  --widget-background: alpha(@noti-bg, 0.8);
+  --noti-bg-alpha: 0.6;
+
+  --padding: calc(var(--border-radius) / 2);
+}
+
+.control-center {
+  border-radius: 0;
+}
+
+.widgets > .widget,
+.widget-mpris > carouselindicatordots,
+.widget-mpris > box > button {
+  background: var(--widget-background);
+  border-radius: var(--border-radius);
+  padding: calc(var(--border-radius) / 2);
+  border: var(--border);
+}
+}
+
+.control-center-list-placeholder {
+  padding: var(--border-radius);
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: #ff0000;
+  color: @noti-bg;
+  transition: all 0.4s ease-in-out;
+}
+
+.notification-default-action,
+.notification-action {
+  background: @noti-bg;
+  color: @noti-fg;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: var(--widget-background);
+}
+
+.notification-group {
+  border-radius: var(--border-radius);
+  padding: 8px;
+    background: transparent;
+}
+
+.widget.widget-mpris {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+.widget.widget-mpris > carouselindicatordots {
+  --dots-padding: 4px;
+  padding: var(--dots-padding);
+  padding-left: var(--dots-padding);
+  padding-right: calc(6px + var(--dots-padding));
+  margin: 0;
+  margin-top: var(--padding);
+}
+.widget-mpris > box > button:hover {
+  background: var(--widget-background);
+}
+.widget-mpris-player {
+  box-shadow: none;
+  border: var(--border);
+  margin: 0 var(--padding);
+}
+.widget-mpris-player:only-child {
+  margin: 0;
+}

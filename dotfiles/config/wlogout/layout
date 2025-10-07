@@ -1,0 +1,27 @@
+{
+    "label": "logout",
+    "action": "$HOME/.config/niri/scripts/power.sh --logout",
+    "text": "Logout",
+    "keybind": "e"
+}
+
+{
+    "label": "suspend",
+    "action": "lockscreen.sh & disown && systemctl suspend",
+    "text": "Suspend",
+    "keybind": "u"
+}
+
+{
+    "label": "reboot",
+    "action": "$HOME/.config/niri/scripts/power.sh --reboot",
+    "text": "Reboot",
+    "keybind": "r"
+}
+
+{
+    "label": "shutdown",
+    "action": "$HOME/.config/niri/scripts/power.sh --poweroff",
+    "text": "Power Off",
+    "keybind": "s"
+}
