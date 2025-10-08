@@ -150,10 +150,17 @@ binds {
     Mod+Return           { spawn-sh "kitty"; }
     Mod+D                { spawn-sh "~/.config/niri/scripts/menu.sh"; }
     Mod+E                { spawn-sh "dolphin"; }
+    Mod+B                { spawn-sh "~/.config/niri/scripts/browser.sh"; }
 
     // Backlight and Audio
-    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl set +5%" ; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl set 5%-" ; }
+    F4                    allow-when-locked=true { spawn-sh "~/.config/niri/scripts/brightness.sh up" ; }
+    F3                    allow-when-locked=true { spawn-sh "~/.config/niri/scripts/brightness.sh down" ; }
+    F9                    allow-when-locked=true { spawn-sh "~/.config/niri/scripts/volumecontrol.sh --toggle"; }
+    F10                    allow-when-locked=true { spawn-sh "~/.config/niri/scripts/volumecontrol.sh --dec"; }
+    F10                    allow-when-locked=true { spawn-sh "~/.config/niri/scripts/volumecontrol.sh --inc"; }
+
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "~/.config/niri/scripts/brightness.sh up" ; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "~/.config/niri/scripts/brightness.sh down" ; }
     XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
     XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
@@ -164,7 +171,7 @@ binds {
 
     // Windows and Columns
     Mod+Q                { close-window; }
-    Mod+X                { quit; }
+    Mod+X                { spawn-sh "wlogout -b 4 --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css" }
     Mod+V                { toggle-window-floating; }
     Mod+F                { maximize-column; }
     Mod+Shift+F          { fullscreen-window; }
