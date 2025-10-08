@@ -57,6 +57,7 @@ aur_helper=$(command -v yay || command -v paru) # find the aur helper
 
 _niri=(
     niri
+    wlr-randr
 )
 
 # checking already installed packages 

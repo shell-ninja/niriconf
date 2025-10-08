@@ -149,6 +149,7 @@ binds {
     // applications
     Mod+Return           { spawn-sh "kitty"; }
     Mod+D                { spawn-sh "~/.config/niri/scripts/menu.sh"; }
+    Mod+Shift+D          { spawn-sh "~/.config/niri/scripts/rofi-emoji.sh"; }
     Mod+E                { spawn-sh "dolphin"; }
     Mod+B                { spawn-sh "~/.config/niri/scripts/browser.sh"; }
 

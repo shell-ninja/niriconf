@@ -32,5 +32,5 @@ refresh_rate=$(gum choose \
 
 rate_value=$(echo "$refresh_rate" | awk '{print $1}')
 
-sed -i "/output .*/output \"${monitor_name}\" {/" "$config_file"
+sed -i "s/output .*/output \"${monitor_name}\" {/" "$config_file"
 sed -i "s/mode .*/mode \"${monitor_resolution}@${rate_value}\"/" "$config_file"
