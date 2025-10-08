@@ -1,7 +1,6 @@
 #!/bin/bash
 
-config_file="$HOME/.config/hypr/configs/monitor.conf"
-auto_generated_setting=$(cat $config_file | grep "monitor=,preferred, auto, 1")
+config_file="$HOME/.config/niri/config.kdl"
 
 display() {
     cat << "EOF"
@@ -13,58 +12,25 @@ display() {
 EOF
 }
 
-if [[ "$auto_generated_setting" ]]; then
 
-    gum spin \
-        --spinner minidot \
-        --spinner.foreground "#dceabf" \
-        --title.foreground "#dceabf" \
-        --title "Setting up for your Monitor" -- \
-        sleep 2
+gum spin \
+    --spinner minidot \
+    --spinner.foreground "#dceabf" \
+    --title.foreground "#dceabf" \
+    --title "Setting up for your Monitor" -- \
+    sleep 2
 
-    monitor_name=$(xrandr | grep "connected" | awk '{print $1}')
-    monitor_resolution=$(xrandr | grep "connected" | awk '{print $3}' | cut -d'+' -f1)
+monitor_name=$(wlr-randr | grep "^[^ ]" | awk '{print $1}')
+monitor_resolution=$(wlr-randr | awk '/current/ {print $1}')
 
-    display
-    refresh_rate=$(gum choose \
-                    --header \
-                    "󰍹 Choose the refresh rate for your '$monitor_name' monitor:" \
-                    --header.foreground "#dceabf" \
-                    --selected.foreground "#dceabf" \
-                    --cursor.foreground "#dceabf" \
-                    "60Hz" "75Hz" "120Hz" "144Hz" "165Hz" "180Hz" "200Hz" "240Hz"
-                )
+display
+refresh_rate=$(gum choose \
+    --header "󰍹 Choose the refresh rate for your '$monitor_name' monitor:" \
+    "59.951 Hz (≈60Hz)" "74.973 Hz (≈75Hz)" "119.880 Hz (≈120Hz)" \
+    "143.855 Hz (≈144Hz)" "164.997 Hz (≈165Hz)" "239.760 Hz (≈240Hz)"
+)
 
-    case $refresh_rate in
-        60Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@60, 0x0, 1"
-            ;;
-        75Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@75, 0x0, 1"
-            ;;
-        120Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@120, 0x0, 1"
-            ;;
-        144Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@144, 0x0, 1"
-            ;;
-        165Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@165, 0x0, 1"
-            ;;
-        180Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@165, 0x0, 1"
-            ;;
-        200Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@200, 0x0, 1"
-            ;;
-        240Hz)
-            settings="monitor=${monitor_name},${monitor_resolution}@240, 0x0, 1"
-            ;;
-        *)
-            echo -e ">< Nothing will be changed. Exiting.."
-            exit 0
-            ;;
-    esac
+rate_value=$(echo "$refresh_rate" | awk '{print $1}')
 
-    sed -i "s/$auto_generated_setting/$settings/" "$config_file"
-fi
+sed -i "s/output .*/output \"${monitor_name}\" {/" "$config_file"
+sed -i "s/mode .*/mode \"${monitor_resolution}@${rate_value}\"/" "$config_file"

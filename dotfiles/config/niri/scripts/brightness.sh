@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iDIR="$HOME/.config/hypr/icons/brightness"
+iDIR="$HOME/.config/niri/icons/brightness"
 notification_timeout=1000
 
 if [[ -d "/sys/class/power_supply/BAT0" ]]; then
@@ -26,14 +26,9 @@ else
     }
 fi
 
-# Notify using dunst
-# notify_user() {
-# 	notify-send -a -r -h string:x-dunst-stack-tag:brightness_notif -i "$icon" "Brightness: $current%"
-# }
-
 # Notify using swaync
 notify_user() {
-	notify-send -e -h string:x-canonical-private-synchronous:brightness_notif -h int:value:$current -u low -i "$icon" "Brightness : $current%"
+	notify-send -e -h string:x-canonical-private-synchronous:brightness_notif -u low -i "$icon" "Brightness : $current%"
 }
 
 # Change brightness

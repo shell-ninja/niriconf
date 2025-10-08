@@ -4,7 +4,7 @@ iDIR="$HOME/.config/niri/icons/vol"
 
 # Get Volume
 get_volume() {
-    volume=$(pamixer --get-volume)
+    volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f\n", $2 * 100}')
     if [[ "$volume" -eq "0" ]]; then
         echo "Muted"
     else
@@ -27,7 +27,7 @@ notify_user() {
     if [[ "$(get_volume)" == "Muted" ]]; then
         notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
     else
-        notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
+        notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
     fi
 }
 

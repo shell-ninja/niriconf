@@ -7,7 +7,7 @@
 
 {
     "label": "suspend",
-    "action": "lockscreen.sh & disown && systemctl suspend",
+    "action": "HOME/.config/nini/scripts/power.sh --suspend",
     "text": "Suspend",
     "keybind": "u"
 }

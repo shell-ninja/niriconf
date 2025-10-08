@@ -14,9 +14,11 @@ case $1 in
     --logout)
         "$HOME/.config/niri/scripts/uptime.sh"
         "$HOME/.config/niri/scripts/notification.sh" logout
-        quit
+        niri msg action quit --skip-confirmation
         ;;
-    # --lock)
-    #     nirilock
+    --suspend)
+        "$HOME/.config/niri/scripts/uptime.sh"
+        "$HOME/.config/niri/scripts/notification.sh" logout
+        systemctl suspend --now
         ;;
 esac

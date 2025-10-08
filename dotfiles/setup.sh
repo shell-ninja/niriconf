@@ -120,7 +120,6 @@ dirs=(
     swaync
     waybar
     wlogout
-    # xfce4
     xsettingsd
     yazi
     dolphinrc
@@ -139,78 +138,31 @@ niri_cache="$HOME/.config/niri/.cache"
 # Ensure backup directory exists
 mkdir -p "$backup_dir"
 
-# ========================= I will update it later ========================= #
-# Function to handle backup/restore
-# backup_or_restore() {
-#     local file_path="$1"
-#     local file_type="$2"
-#
-#     if [[ -e "$file_path" ]]; then
-#         echo
-#         msg att "A $file_type has been found."
-#         if command -v gum &> /dev/null; then
-#             gum confirm "Would you Restore it or put it into the Backup?" \
-#                 --affirmative "Restore it.." \
-#                 --negative "Backup it..."
-#             echo
-#
-#             if [[ $? -eq 0 ]]; then
-#                 action="r"
-#             else
-#                 action="b"
-#             fi
-#
-#         else
-#             msg ask "Would you like to Restore it or put it into the Backup? [ r/b ]"
-#             read -r -p "$(echo -e '\e[1;32mSelect: \e[0m')" action
-#         fi
-#
-#         if [[ "$action" =~ ^[Rr]$ ]]; then
-#             cp -r "$file_path" "$backup_dir/"
-#         else
-#             msg att "$file_type will be backed up..."
-#         fi
-#     fi
-# }
-#
-# # Backing wallpapers
-# backup_or_restore "$wallpapers" "wallpaper directory"
-# backup_or_restore "$hypr_config" "hyprland config file"
-
-# [[ -e "$hypr_cache" ]] && cp -r "$hypr_cache" "$backup_dir/"
+sleep 1
 
 # if some main directories exists, backing them up.
-# if [[ -d "$HOME/.backup_niriconf-${USER}" ]]; then
-#     msg att "a .backup_niriconf-${USER} directory was there. Archiving it..."
-#     cd
-#     mkdir -p ".archive_niriconf-${USER}"
-#     tar -czf ".archive_niriconf-${USER}/backup_niriconf-$(date +%d-%m-%Y_%I-%M-%p)-${USER}.tar.gz" ".backup_niriconf-${USER}" &> /dev/null
-#     # mv "HyprBackup-${USER}.zip" "HyprArchive-${USER}/"
-#     rm -rf ".backup_niriconf-${USER}"
-#     msg dn "~/.backup_niriconf-${USER} was archived inside ~/.archive_niriconf-${USER} directory..." && sleep 1
-# fi
+if [[ -d "$HOME/.config/backup_niriconf-${USER}" ]]; then
+    msg att "a backup_niriconf-${USER} directory was there. Archiving it..."
+    mkdir -p "$HOME/.config/archive_niriconf-${USER}"
+    tar -czf "$HOME/.config/archive_niriconf-${USER}/backup_niriconf-$(date +%d-%m-%Y_%I-%M-%p)-${USER}.tar.gz" "$HOME/.config/backup_niriconf-${USER}" &> /dev/null
+    rm -rf "$HOME/.config/backup_niriconf-${USER}"
+    msg dn "~/.config/backup_niriconf-${USER} was archived inside ~/.config/archive_niriconf-${USER} directory..." && sleep 1
+fi
 
 
-# mkdir -p "$HOME/.backup_niriconf-${USER}"
-# if [[ -d "$HOME/.niriconf" ]]; then
-#
-#     mv "$HOME/.niriconf" "$HOME/.backup_niriconf-${USER}/"
-#
-# else
-#
-#     for confs in "${dirs[@]}"; do
-#         conf_path="$HOME/.config/$confs"
-#
-#         # If the config exists and is NOT a symlink → backup it
-#         if [[ -e "$conf_path" && ! -L "$conf_path" ]]; then
-#             mv "$conf_path" "$HOME/.backup_niriconf-${USER}/" 2>&1 | tee -a "$log"
-#         fi
-#     done
-#     
-#     msg dn "Backed up $confs config to ~/.backup_niriconf-${USER}/"
-# fi
+mkdir -p "$HOME/.backup_niriconf-${USER}"
+for confs in "${dirs[@]}"; do
+    conf_path="$HOME/.config/$confs"
 
-# [[ -d "$HOME/.backup_niriconf-${USER}/hypr" ]] && msg dn "Everything has been backuped in $HOME/.backup_niriconf-${USER}..."
+    # If the config exists and is NOT a symlink → backup it
+    if [[ -e "$conf_path" && ! -L "$conf_path" ]]; then
+        mv "$conf_path" "$HOME/.config/backup_niriconf-${USER}/" 2>&1 | tee -a "$log"
+    fi
+done
+
+msg dn "Backed up $confs config to ~/.config/backup_niriconf-${USER}/"
+
+[[ -d "$HOME/.config/backup_niriconf-${USER}/niri" ]] && msg dn "Everything has been backuped in $HOME/.config/backup_niriconf-${USER}..."
 
 sleep 1
 
@@ -239,39 +191,12 @@ fi
 
 ####################################################################
 
-#_____ for virtual machine
-# Check if the configuration is in a virtual box
-# if hostnamectl | grep -q 'Chassis: vm'; then
-#     msg att "You are using this script in a Virtual Machine..."
-#     msg act "Setting up things for you..." 
-#     sed -i '/env = WLR_NO_HARDWARE_CURSORS,1/s/^#//' "$dir/config/hypr/configs/environment.conf"
-#     sed -i '/env = WLR_RENDERER_ALLOW_SOFTWARE,1/s/^#//' "$dir/config/hypr/configs/environment.conf"
-#     echo -e '#Monitor\nmonitor=Virtual-1, 1920x1080@60,auto,1' > "$dir/config/hypr/configs/monitor.conf"
-# fi
-
-
-#_____ for nvidia gpu. I don't know if it's gonna work or not. Because I don't have any gpu.
-# uncommenting WLR_NO_HARDWARE_CURSORS if nvidia is detected
-# if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq nvidia; then
-#   msg act "Nvidia GPU detected. Setting up proper env's" 2>&1 | tee -a >(sed 's/\x1B\[[0-9;]*[JKmsu]//g' >> "$log") || true
-#   sed -i '/env = WLR_NO_HARDWARE_CURSORS,1/s/^#//' config/hypr/configs/environment.conf
-#   sed -i '/env = LIBVA_DRIVER_NAME,nvidia/s/^#//' config/hypr/configs/environment.conf
-#   sed -i '/env = __GLX_VENDOR_LIBRARY_NAME,nvidia/s/^# //' config/hypr/configs/environment.conf
-# fi
-
 sleep 1
-
 
 # creating symlinks
 cp -a "$dir/config"/* "$HOME/.config/"
 mv "$HOME/.config/fastfetch" "$HOME/.local/share/"
-
-# for dotfilesDir in "$HOME/.config"/*; do
-#     configDirName=$(basename "$dotfilesDir")
-#     configDirPath="$HOME/.config/$configDirName"
-#
-#     ln -sfn "$dotfilesDir" "$configDirPath"
-# done
+mkdir -p "$HOME/.local/bin" && mv "$HOME/.config/niri/scripts/monitor.sh" "$HOME/.local/bin/monitor"
 
 sleep 1
 
@@ -309,52 +234,6 @@ fi
 
 cp -r "$dir/local/state/dolphinstaterc" "$HOME/.local/state/"
 cp -r "$dir/local/share/konsole" "$HOME/.local/share/"
-
-
-# wayland session dir
-# wayland_session_dir=/usr/share/wayland-sessions
-# if [ -d "$wayland_session_dir" ]; then
-#     msg att "$wayland_session_dir found..."
-# else
-#     msg att "$wayland_session_dir NOT found, creating..."
-#     sudo mkdir $wayland_session_dir 2>&1 | tee -a "$log"
-# fi
-# sudo cp "$dir/extras/hyprland.desktop" /usr/share/wayland-sessions/ 2>&1 | tee -a "$log"
-
-
-# restore the backuped items into the original location
-# restore_backup() {
-#     local backup_path="$1"      # Path to the backup file/directory
-#     local original_path="$2"    # Original file/directory path
-#     local file_type="$3"        # Description of the file/directory
-#
-#     if [[ -e "$backup_path" ]]; then
-#         # Create a backup of the current file/directory if it exists
-#         if [[ -e "$original_path" ]]; then
-#             mv "$original_path" "${original_path}.backup"
-#         fi
-#
-#         # Restore the file/directory from the backup
-#         if cp -r "$backup_path" "$original_path"; then
-#             msg dn "$file_type restored to its original location: $original_path."
-#         else
-#             msg err "Could not restore defaults."
-#         fi
-#
-#         if [[ -e "${original_path}.backup" ]]; then
-#             rm -rf "${original_path}.backup"
-#         fi
-#     fi
-# }
-#
-# # Restore files
-# restore_backup "$wallpapers_backup" "$wallpapers" "wallpaper directory"
-# restore_backup "$hypr_config_backup" "$hypr_config" "hyprland config file"
-#
-# # restoring hyprland cache
-# [[ -e "$HOME/.niriconf/hypr/.cache" ]] && rm -rf "$HOME/.niriconf/hypr/.cache"
-# [[ -e "$hypr_cache_backup" ]] && cp -r "$hypr_cache_backup" "$hypr_cache"
-# rm -rf "$backup_dir"
 
 clear && sleep 1
 
@@ -399,16 +278,16 @@ if [[ -d "$HOME/.config/niri/Wallpapers" ]]; then
 
     if [[ -d "$HOME/.config/niri/.cache" ]]; then
         wallName=$(cat "$HOME/.config/niri/.cache/.wallpaper")
-        wallpaper=$(find "$HOME/.niriconf/hypr/Wallpaper" -type f -name "$wallName.*" | head -n 1)
+        wallpaper=$(find "$HOME/.config/niri/Wallpapers" -type f -name "$wallName.*" | head -n 1)
     else
         mkdir -p "$HOME/.config/niri/.cache"
         wallCache="$HOME/.config/niri/.cache/.wallpaper"
 
         touch "$wallCache"      
 
-        if [ -f "$HOME/.config/niri/Wallpaper/linux.jpg" ]; then
+        if [ -f "$HOME/.config/niri/Wallpapers/linux.jpg" ]; then
             echo "linux" > "$wallCache"
-            wallpaper="$HOME/.config/niri/Wallpaper/linux.jpg"
+            wallpaper="$HOME/.config/niri/Wallpapers/linux.jpg"
         fi
     fi
 

@@ -3,9 +3,7 @@
 
     // rofi app launcher
     "custom/launch_rofi": {
-        "format": "",   // for arch
-         // "format": "󰣛",   // for fedora
-        // "format": "",  // for opensuse
+        "format": "",
         "on-click": "rofi -show drun -theme ~/.config/rofi/menu/menu.rasi || killall rofi",
         "on-click-right": "kitty --title yazi -e yazi",
         "tooltip": true,
@@ -21,7 +19,7 @@
 
     "custom/notify": {
         "tooltip": true,
-        "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+        "tooltip-format": "You have <span foreground='#008B8B'>{}</span> notifications.",
         "format": "{icon}",
         "format-icons": {
             "notification": "<span foreground='red'><sup></sup></span>",

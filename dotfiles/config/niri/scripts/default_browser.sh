@@ -1,7 +1,7 @@
 #!/bin/bash
 
-browser_cache="$HOME/.config/hypr/.cache/.browser"
-scripts_dir="$HOME/.config/hypr/scripts"
+browser_cache="$HOME/.config/niri/.cache/.browser"
+scripts_dir="$HOME/.config/niri/scripts"
 
 [[ ! -f "$browser_cache" ]] && touch "$browser_cache"
 
@@ -53,8 +53,8 @@ fi
 
 case $1 in
 --reset)
-    rm ~/.config/hypr/.cache/.browser
+    rm ~/.config/niri/.cache/.browser
     notify-send "Reset" "Default browser list has been reset"
-    "$HOME/.config/hypr/scripts/default_browser.sh"
+    "$scripts_dir/default_browser.sh"
     ;;
 esac

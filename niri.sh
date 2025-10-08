@@ -102,7 +102,6 @@ else
         ["setup_for_bluetooth"]=""
         ["install_vs_code"]=""
         ["install_browser"]=""
-        # ["have_nvidia"]=""
     )
 
     # Write initial options to the cache file
