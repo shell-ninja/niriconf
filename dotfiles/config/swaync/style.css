@@ -17,7 +17,7 @@
 .widgets > .widget,
 .widget-mpris > carouselindicatordots,
 .widget-mpris > box > button {
-  background: var(--widget-background);
+  background: @noti-bg;
   border-radius: var(--border-radius);
   padding: calc(var(--border-radius) / 2);
   border: var(--border);

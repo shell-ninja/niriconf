@@ -140,6 +140,32 @@ mkdir -p "$backup_dir"
 
 sleep 1
 
+# if some main directories exists, backing them up.
+if [[ -d "$HOME/.config/backup_niriconf-${USER}" ]]; then
+    msg att "a backup_niriconf-${USER} directory was there. Archiving it..."
+    mkdir -p "$HOME/.config/archive_niriconf-${USER}"
+    tar -czf "$HOME/.config/archive_niriconf-${USER}/backup_niriconf-$(date +%d-%m-%Y_%I-%M-%p)-${USER}.tar.gz" "$HOME/.config/backup_niriconf-${USER}" &> /dev/null
+    rm -rf "$HOME/.config/backup_niriconf-${USER}"
+    msg dn "~/.config/backup_niriconf-${USER} was archived inside ~/.config/archive_niriconf-${USER} directory..." && sleep 1
+fi
+
+
+mkdir -p "$HOME/.backup_niriconf-${USER}"
+for confs in "${dirs[@]}"; do
+    conf_path="$HOME/.config/$confs"
+
+    # If the config exists and is NOT a symlink → backup it
+    if [[ -e "$conf_path" && ! -L "$conf_path" ]]; then
+        mv "$conf_path" "$HOME/.config/backup_niriconf-${USER}/" 2>&1 | tee -a "$log"
+    fi
+done
+
+msg dn "Backed up $confs config to ~/.config/backup_niriconf-${USER}/"
+
+[[ -d "$HOME/.config/backup_niriconf-${USER}/niri" ]] && msg dn "Everything has been backuped in $HOME/.config/backup_niriconf-${USER}..."
+
+sleep 1
+
 ####################################################################
 
 #_____ if OpenBangla Keyboard is installed
