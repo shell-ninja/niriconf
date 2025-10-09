@@ -4,8 +4,8 @@
 THEME_CONF="/usr/share/sddm/themes/SilentSDDM/configs/default-left.conf"
 
 # Wallpaper settings
-wallDir="$HOME/.config/hypr/Wallpaper"
-currentWall=$(cat "$HOME/.config/hypr/.cache/.wallpaper")
+wallDir="$HOME/.config/niri/Wallpaper"
+currentWall=$(cat "$HOME/.config/niri/.cache/.wallpaper")
 
 # Match supported image extensions
 wallPath=$(find "$wallDir" -maxdepth 1 -type f -iname "${currentWall}.*" | head -n 1)

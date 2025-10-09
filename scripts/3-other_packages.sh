@@ -69,11 +69,8 @@ other_packages=(
     btop
     cliphist
     curl
-    # dunst
-    # eog
     fastfetch
     ffmpeg
-    # gnome-disk-utility
     partitionmanager
     imagemagick
     jq
@@ -81,6 +78,7 @@ other_packages=(
     kitty
     kvantum
     kvantum-qt5
+    hyprlock
     less
     lxappearance
     mpv-mpris
@@ -111,7 +109,6 @@ other_packages=(
     ripgrep
     rofi-wayland
     satty
-    # swappy
     swaync
     swww
     unzip

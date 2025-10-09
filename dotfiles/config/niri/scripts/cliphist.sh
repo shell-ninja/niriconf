@@ -1,7 +1,5 @@
 #!/bin/bash
 
-scripts_dir=$HOME/.config/hypr/scripts
-
 case $1 in
     c) cliphist list | rofi -dmenu -theme-str "entry { placeholder: \" Search Clipboard\";} ${pos} ${r_override}" -theme-str "${fnt_override}" -config ~/.config/rofi/themes/rofi-clipboard.rasi | cliphist decode | wl-copy
         ;;

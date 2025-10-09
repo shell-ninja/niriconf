@@ -1,12 +1,12 @@
 #!/bin/bash
 
-SOUND_FILE_UPDATE="$HOME/.config/hypr/sounds/update.wav"
-SOUND_FILE_ERROR="$HOME/.config/hypr/sounds/error.wav"
-update_sign="$HOME/.config/hypr/icons/update.png"
-done_sign="$HOME/.config/hypr/icons/done.png"
-warning_sign="$HOME/.config/hypr/icons/warning.png"
-error_sign="$HOME/.config/hypr/icons/error.png"
-upd_script="$HOME/.config/hypr/scripts/pkgupdate.sh"
+SOUND_FILE_UPDATE="$HOME/.config/niri/sounds/update.wav"
+SOUND_FILE_ERROR="$HOME/.config/niri/sounds/error.wav"
+update_sign="$HOME/.config/niri/icons/update.png"
+done_sign="$HOME/.config/niri/icons/done.png"
+warning_sign="$HOME/.config/niri/icons/warning.png"
+error_sign="$HOME/.config/niri/icons/error.png"
+upd_script="$HOME/.config/niri/scripts/pkgupdate.sh"
 
 # notification functions
 update_notification() {
@@ -19,7 +19,7 @@ error_notification() {
     paplay "$SOUND_FILE_ERROR"
 }
 
-scripts_dir="$HOME/.config/hypr/scripts"
+scripts_dir="$HOME/.config/niri/scripts"
 
 # function to check the package manager
 check_update() {

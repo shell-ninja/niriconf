@@ -3,7 +3,7 @@
 ICON="$HOME/.config/niri/icons/pc.png"
 
 # uptime cache file
-uptime_file="$HOME/.config/hypr/.cache/.uptime"
+uptime_file="$HOME/.config/niri/.cache/.uptime"
 [[ ! -f "$uptime_file" ]] && touch "$uptime_file"
 
 uptime=$(uptime -p | cut -d' ' -f2-)
