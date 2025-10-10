@@ -6,7 +6,7 @@ fi
 
 sound_file="/usr/share/sounds/freedesktop/stereo/screen-capture.oga"
 save_dir="${2:-$XDG_PICTURES_DIR/Screenshots}"
-save_file=$(date +'screenshot_%y%m%d_%H%M%S.png')
+save_file=$(date +'screenshot_niri_%y%m%d_%H%M%S.png')
 temp_screenshot="/tmp/screenshot.png" # Satty can also read from stdin, but using a temp file fits your current script structure
 
 mkdir -p "$save_dir"
@@ -39,5 +39,3 @@ esac
 # Satty saves directly to the final path, so we don't need to check for the temp file,
 # but we still need to remove it after satty has processed it.
 rm "$temp_screenshot"
-
-swaync &

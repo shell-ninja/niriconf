@@ -45,6 +45,9 @@ niriConfig="$HOME/.config/niri/config.kdl"
 sed -i "s/active-color .*$/active-color \"$active_border_color\"/g" "$niriConfig"
 sed -i "s/inactive-color .*$/inactive-color \"$inactive_border_color\"/g" "$niriConfig"
 
+# hyprland colors.
+ln -sf "$HOME/.cache/wal/colors-hyprland.conf" "$HOME/.config/hypr/colors-hyprland.conf"
+
 # Apply new colors dynamically
 kill -SIGUSR1 $(pidof kitty)
 

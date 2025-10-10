@@ -20,6 +20,8 @@ gum spin \
     --title "Setting up for your Monitor" -- \
     sleep 2
 
+clear
+
 monitor_name=$(wlr-randr | grep "^[^ ]" | awk '{print $1}')
 monitor_resolution=$(wlr-randr | awk '/current/ {print $1}')
 

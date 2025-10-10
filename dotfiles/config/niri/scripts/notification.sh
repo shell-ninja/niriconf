@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Path to the sound files
-SOUND_FILE_UPDATE="$HOME/.config/hypr/sounds/update.wav"
-SOUND_FILE_SYSTEM="$HOME/.config/hypr/sounds/system-startup.wav"
-SOUND_FILE_LOGOUT="$HOME/.config/hypr/sounds/poweroff.mp3"
+SOUND_FILE_UPDATE="$HOME/.config/niri/sounds/update.wav"
+SOUND_FILE_SYSTEM="$HOME/.config/niri/sounds/system-startup.wav"
+SOUND_FILE_LOGOUT="$HOME/.config/niri/sounds/poweroff.mp3"
 
 # Function to send notification and play sound
 notify_with_sound() {
