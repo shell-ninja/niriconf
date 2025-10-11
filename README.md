@@ -204,14 +204,14 @@ chmod +x niri.sh
 <!-- - Hurrah! Now reboot your system, select Hyprland from your login manager, log into your Hyprland and enjoy it. -->
 <!-- <hr> -->
 <!---->
-<!-- <br> -->
-<!---->
-<!-- <a id="keybinds"></a> -->
-<!---->
-<!-- <div align="right"> -->
-<!--   <br> -->
-<!--   <a href="#top"><kbd> <br> 🡅 <br> </kbd></a> -->
-<!-- </div> -->
+<br>
+
+<a id="keybinds"></a>
+
+<div align="right">
+<br> -->
+<a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
 
 ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=90EE90&vCenter=true&width=435&height=25&lines=KEYBOARD-SHORTCUTS" width="450"/>
 
