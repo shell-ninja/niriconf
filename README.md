@@ -34,9 +34,9 @@
 <summary>Overall</summary>
 <p align="center">
    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/1.png?raw=true" />
-   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/2png?raw=true" />
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/2.png?raw=true" /> <br>
 
-   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/3png?raw=true" />
+   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/3.png?raw=true" />
 </p> <br>
 </details>
 
