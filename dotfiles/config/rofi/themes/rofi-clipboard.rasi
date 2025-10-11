@@ -23,8 +23,8 @@ configuration {
 /* ---- Window ---- */
 window {
     width:                        600px;
-    x-offset: -15px;
-    y-offset: -15px;
+    x-offset:                     -15px;
+    y-offset:                     15px;
     spacing:                      0px;
     padding:                      0px;
     margin:                       0px; 

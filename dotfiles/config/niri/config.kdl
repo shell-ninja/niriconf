@@ -254,6 +254,7 @@ binds {
     Mod+Q                { close-window; }
     Mod+X                { spawn-sh "wlogout -b 4 --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css"; }
     Mod+Alt+C            { spawn-sh "~/.config/niri/scripts/cliphist.sh c"; }
+    Mod+Alt+W            { spawn-sh "~/.config/niri/scripts/cliphist.sh w"; }
     Mod+V                { toggle-window-floating; }
     Mod+F                { maximize-column; }
     Mod+Shift+F          { fullscreen-window; }

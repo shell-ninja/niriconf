@@ -12,91 +12,85 @@
 
 <br>
 
-<!-- <a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp; -->
-<!-- <a href="#update"><kbd> <br> Update <br> </kbd></a>&ensp;&ensp; -->
-<!-- <a href="#config"><kbd> <br> Configuration <br> </kbd></a>&ensp;&ensp; -->
-<!-- <a href="#keybinds"><kbd> <br> keyboard Shortcuts <br> </kbd></a>&ensp;&ensp; -->
-<!-- <a href="#contrib"><kbd> <br> Contrubution <br> </kbd></a>&ensp;&ensp; -->
-<!-- <a href="https://t.me/+OxKQy7Y6XWxjOTQ9"><kbd> <br> Telegram <br> </kbd></a> -->
+<a href="#screenshots"><kbd> <br> Screenshots <br> </kbd></a>&ensp;&ensp;
+<a href="#config"><kbd> <br> Configuration <br> </kbd></a>&ensp;&ensp;
+<a href="#keybinds"><kbd> <br> keyboard Shortcuts <br> </kbd></a>&ensp;&ensp;
+<a href="https://t.me/+OxKQy7Y6XWxjOTQ9"><kbd> <br> Telegram <br> </kbd></a>
 
 </div>
 
 <br>
 
-<!-- <div align="right"> -->
-<!--   <br> -->
-<!--   <a href="#top"><kbd> <br> 🡅 <br> </kbd></a> -->
-<!-- </div> -->
-<!---->
-<!-- <a id="screenshots"></a> -->
-<!---->
-<!-- ## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=90EE90&vCenter=true&width=435&height=25&lines=SCREENSHOTS" width="450"/> -->
-<!---->
-<!-- <details close> -->
-<!-- <summary>Overall</summary> -->
-<!-- <p align="center"> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/theme/1.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/theme/2.png?raw=true" /> <br> -->
-<!---->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/theme/3.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/theme/4.png?raw=true" /> -->
-<!---->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/theme/5.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/theme/6.png?raw=true" /> -->
-<!-- </p> <br> -->
-<!-- </details> -->
-<!---->
-<!-- <details close> -->
-<!-- <summary>Menu</summary> -->
-<!-- <p align="center"> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/menu/1.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/menu/2.png?raw=true" /> <br> -->
-<!---->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/menu/4.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/menu/3.png?raw=true" /> -->
-<!--     <br> -->
-<!---->
-<!--    <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/clipboard.png?raw=true" /> -->
-<!-- </p> <br> -->
-<!-- </details> -->
-<!---->
-<!-- <details close> -->
-<!-- <summary>Power Menu</summary> -->
-<!-- <p align="center"> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/power/1.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/power/2.png?raw=true" /> <br> -->
-<!-- </p> <br> -->
-<!-- </details> -->
-<!---->
-<!-- <details close> -->
-<!-- <summary>Wallpaper</summary> -->
-<!-- <p align="center"> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/wallpaper/1.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/wallpaper/2.png?raw=true" /> <br> -->
-<!-- </p> <br> -->
-<!-- </details> -->
-<!---->
-<!-- <details close> -->
-<!-- <summary>Lock Screen</summary> -->
-<!-- <p align="center"> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/lockscreen/lock-1.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/lockscreen/lock-2.png?raw=true" /> -->
-<!--         <br> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/lockscreen/lock-3.png?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/lockscreen/selecttheme.png?raw=true" /> -->
-<!-- </p> -->
-<!-- </details> -->
-<!---->
-<!-- <details close> -->
-<!-- <summary>Login Screen (sddm)</summary> -->
-<!-- <p align="center"> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/sddm/sddm1.jpg?raw=true" /> -->
-<!--    <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/sddm/sddm2.jpg?raw=true" /> -->
-<!-- </p> -->
-<!-- </details> -->
+<div align="right">
+  <br>
+  <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
+</div>
 
-<!-- <br> -->
+<a id="screenshots"></a>
 
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=90EE90&vCenter=true&width=435&height=25&lines=SCREENSHOTS" width="450"/>
+
+<details close>
+<summary>Overall</summary>
+<p align="center">
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/1.png?raw=true" />
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/2png?raw=true" />
+
+   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/overall/3png?raw=true" />
+</p> <br>
+</details>
+
+<details close>
+<summary>Menu</summary>
+<p align="center">
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/menu/1.png?raw=true" />
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/menu/2.png?raw=true" /> <br>
+
+    - Clipboard Manager
+
+   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/cliphist.png?raw=true" />
+
+</p> <br>
+</details>
+
+<details close>
+<summary>Notification</summary>
+<p align="center">
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/notification/1.png?raw=true" />
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/notification/2.png?raw=true" />
+</p> <br>
+</details>
+
+<details close>
+<summary>Power Menu</summary>
+<p align="center">
+   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/power.png?raw=true" />
+</p> <br>
+</details>
+
+<details close>
+<summary>Wallpaper</summary>
+<p align="center">
+   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/niri/wallpaper.png?raw=true" />
+</p> <br>
+</details>
+
+<details close>
+<summary>Lock Screen</summary>
+<p align="center">
+   <img aligh="center" width="99%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/lockscreen/lock-3.png?raw=true" />
+</p>
+</details>
+
+<details close>
+<summary>Login Screen (sddm)</summary>
+<p align="center">
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/sddm/sddm1.jpg?raw=true" />
+   <img aligh="center" width="49%" src="https://github.com/shell-ninja/Screen-Shots/blob/main/hyprconf/sddm/sddm2.jpg?raw=true" />
+</p>
+</details>
+
+<br>
 <div align="right">
   <br>
   <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
