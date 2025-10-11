@@ -128,7 +128,7 @@
 
 #### Run these command in your terminal and the installation process will start automatically.
 
-> [ NOTE ]
+> [!NOTE]
 > For now there's no direct installation script. I'll add that soon.
 
 - Clone the repository. Make sure you are in your `$HOME` directory
@@ -163,6 +163,8 @@ chmod +x niri.sh
   <br>
   <a href="#top"><kbd> <br> 🡅 <br> </kbd></a>
 </div>
+
+## <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=25&pause=1000&color=90EE90&vCenter=true&width=435&height=25&lines=CONFIGURATION" width="450"/>
 
 > [!TIP]
 >
