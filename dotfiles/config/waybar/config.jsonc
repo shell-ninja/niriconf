@@ -33,7 +33,7 @@
 
     "modules-right": [
         "custom/updater", 
-        // "group/sysinfo", 
+        "custom/clipboard",
         "battery", 
         "backlight",  
         "pulseaudio", 
